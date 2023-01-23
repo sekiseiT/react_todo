@@ -1,4 +1,5 @@
 import React from 'react';
+import "./Todo.css"
 
 const Todo = ({ todo, toggleTodo }) => {
   const handleTodoClick = () => {
@@ -6,7 +7,7 @@ const Todo = ({ todo, toggleTodo }) => {
   };
 
   return (
-  <div>
+  <div className='TodoList'>
     <label>
       <input type="checkbox" 
       checked={todo.completed} 
