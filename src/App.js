@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import "./App.css"
-import TodoList from "./TodoList";
+import TodoList from "./components/TodoList";
 import Navbar from "./components/Navbar";
 import {v4 as uuidv4} from "uuid";
 
