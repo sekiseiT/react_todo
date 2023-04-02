@@ -7,7 +7,7 @@ import {v4 as uuidv4} from "uuid";
 
 const App = () => {
   //変数を監視するためのuseState
-  const [todos, setTodos] = useState(JSON.parse(localStorage.getItem("keepTodo") || []));
+  const [todos, setTodos] = useState(JSON.parse(localStorage.getItem("keepTodo")) || []);
   // const [project, setProjects] = useState([]);
 
   //要素の取得
