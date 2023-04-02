@@ -1,17 +1,31 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./App.css"
 import TodoList from "./components/TodoList";
 import Navbar from "./components/Navbar";
 import {v4 as uuidv4} from "uuid";
 
 
-function App() {
+const App = () => {
   //変数を監視するためのuseState
-  const [todos, setTodos] = useState([]);
-  const [project, setProjects] = useState([]);
+  const [todos, setTodos] = useState(JSON.parse(localStorage.getItem("keepTodo") || []));
+  // const [project, setProjects] = useState([]);
 
   //要素の取得
   const todoNameRef = useRef();
+
+  // useEffect(() => {
+  //   const temp = localStorage.getItem("keepTodo");
+  //   const loadedTodo = JSON.parse(temp);
+  //   if (loadedTodo) {
+  //     setTodos(loadedTodo);
+  //     console.log(loadedTodo)
+  //   }
+  // }, []);
+  
+  useEffect(() => {
+    const temp = JSON.stringify(todos);
+    localStorage.setItem("keepTodo", temp);
+  }, [todos]);
   
 
 
@@ -37,6 +51,8 @@ function App() {
     const newTodos = todos.filter((todo) => !todo.completed);
     setTodos(newTodos);
   }
+
+  
 
   return (
     //必ず空の要素かdivでかこむ
