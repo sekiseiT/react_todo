@@ -3,30 +3,52 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width: 100vw;
+  height: 100vh;
 }
 
+
 button {
+  
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 10px 0;
   background-color: #3d77a5;
   border: none;
-  box-shadow: 5px 9px 15px -5px #777;
+  /* box-shadow: 5px 9px 15px -5px #777; */
   color: white;
   border-radius: 5px;
   cursor: pointer;
-  transition: all 0.3;
+  /* transition: all 0.3; */
 }
 
 button:hover {
-  transform: translateY(5px);
+  transform: translateY(1px);
   box-shadow: none;
 }
 
 .inputContainer {
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px;
+  top: 5vh;
+}
+
+.TodoList {
+  /* display: inline; */
+  height: 20px;
+  margin: 10px;
+  background-color: rgb(48, 238, 241);
+}
+
+.remain {
+  position: relative;
+}
+
+.delButton {
+  position: absolute;
+  top: 90vh;
 }

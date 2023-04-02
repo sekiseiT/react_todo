@@ -9,7 +9,7 @@ const Todo = ({ todo, toggleTodo }) => {
   return (
   <div className='TodoList'>
     <label>
-      <input type="checkbox" 
+      <input type="checkbox"
       checked={todo.completed} 
       readOnly
       onChange={handleTodoClick}

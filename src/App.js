@@ -59,18 +59,18 @@ const App = () => {
     <div className="container">
       <div className="inputContainer">
 
-      <input type="text" placeholder="タスクを記入" ref={todoNameRef} />
+      <input type="text" id="inputText" placeholder="タスクを記入" ref={todoNameRef} />
       
-      <button onClick={handleAddTodo}>タスクを追加</button>
+      <button onClick={handleAddTodo} className="submitButton">タスクを追加</button>
       </div>
       
       {/* filter関数を検索 */}
-      <div>残りのタスク:{todos.filter((todo) => !todo.completed).length}</div>
+      <div class="remain">残りのタスク:{todos.filter((todo) => !todo.completed).length}</div>
       
       <div className="taskLIst">
         <TodoList todos={todos} toggleTodo={toggleTodo}/>
       </div>
-      <button onClick={handleClear}>完了したタスクの削除</button>
+      <button className="delButton" onClick={handleClear}>完了したタスクの削除</button>
     </div>
   );
 }
